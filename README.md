@@ -15,16 +15,22 @@ Design **data-driven product and marketing strategies** to increase user engagem
 
 ---
 
-## Datasets  
-The analysis uses **publicly available Fitbit wellness tracker data** from a sample of Bellabeat users.  
+## 📂 Datasets
 
-- [Daily Activity Dataset](./datasets/daily_activity.csv)  
-- [Sleep Dataset](./datasets/sleep_day.csv)  
-- [Weight Log Dataset](./datasets/weight_log.csv)  
-- [Heart Rate Dataset](./datasets/heart_rate_daily.csv)  
+All datasets used in this analysis are hosted on Kaggle (due to GitHub's 25 MB per-file limit).
 
-> Note: Data has been cleaned, merged, and anonymized before analysis.  
+- **Raw Datasets (March to April)**  
+  Contains 3 raw CSV files collected from March to April.  
+  [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/march-12-to-april-11-raw-datasets)
 
+- **Raw Datasets (April to May)**  
+  Contains 4 raw CSV files collected from April to May.  
+  [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/april-12-to-may-11-datasets)
+
+- **Clean and Merged Final Datasets**  
+  Contains 4 cleaned and merged CSV files used for the analysis.  
+  [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/fitbit-cleaned-and-merged-datasets)
+  
 ---
 
 ## Process  
