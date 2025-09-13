@@ -64,10 +64,9 @@ The analysis followed the **six-step data analysis framework**:
 ---
 
 ## Deliverables  
-- [Case Study Report (PDF)](./deliverables/Bellabeat_Wellness_Analysis_Report.pdf)  
-- [PowerPoint Presentation](./deliverables/Bellabeat_Wellness_Analysis_Presentation.pptx)  
-- [Data Cleaning Script (R)](./scripts/data_cleaning.R)  
-- [Exploratory Data Analysis (R)](./scripts/eda_analysis.R)  
+- [Bellabeat Analysis Report (HTML)](./deliverables/bellabeat_analysis_report.html)  
+- [PowerPoint Presentation](./deliverables/Bellabeat_Analysis_slides.pptx)  
+- [Data Cleaning Script (R)](./scripts/bellabeat_analysis_cleaning.R)  
 
 ---
 
