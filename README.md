@@ -20,15 +20,15 @@ Design **data-driven product and marketing strategies** to increase user engagem
 All datasets used in this analysis are hosted on Kaggle (due to GitHub's 25 MB per-file limit).
 
 - **Raw Datasets (March to April)**  
-  Contains 3 raw CSV files collected from March to April.  
+  Contains 3 raw CSV files collected from March 12 to April 11.  
   [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/march-12-to-april-11-raw-datasets)
 
 - **Raw Datasets (April to May)**  
-  Contains 4 raw CSV files collected from April to May.  
+  Contains 4 raw CSV files collected from April 12 to May 11.  
   [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/april-12-to-may-11-datasets)
 
 - **Clean and Merged Final Datasets**  
-  Contains 4 cleaned and merged CSV files used for the analysis.  
+  Contains 4 cleaned and merged CSV files used for the analysis.
   [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/fitbit-cleaned-and-merged-datasets)
   
 ---
