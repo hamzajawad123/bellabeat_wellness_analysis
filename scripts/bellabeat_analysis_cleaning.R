@@ -75,10 +75,6 @@ daily_activity_1 <- daily_activity_1 %>%
     )
   )
 
-# Save cleaned dataset
-write_csv(daily_activity_1, 
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/daily_activity_clean_first.csv")
-
 # April to May Daily Activity Dataset Cleaning
 
 # Load the dataset
@@ -156,10 +152,6 @@ daily_activity_2 <- daily_activity_2 %>%
     )
   )
 
-# Save cleaned dataset
-write_csv(daily_activity_2, 
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/daily_activity_clean_second.csv")
-
 
 # ------------------------
 # Merge March–April and April–May Cleaned Daily Activity Datasets
@@ -180,10 +172,6 @@ daily_activity_all <- daily_activity_all %>%
 nrow(daily_activity_all)  
 n_distinct(daily_activity_all$id)  
 range(daily_activity_all$activity_date)
-
-# Save final merged dataset
-write_csv(daily_activity_all, 
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/daily_activity_clean_all.csv")
 
 
 # March to April Weight Log Dataset Cleaning
@@ -227,13 +215,6 @@ weight_log_1 %>%
 weight_log_1 <- weight_log_1 %>%
   filter(bmi > 10 & bmi < 60)
 
-# ------------------------
-# Save cleaned dataset
-# ------------------------
-write_csv(weight_log_1, 
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/weight_log_clean_first.csv")
-
-
 # April to May Weight Log Dataset Cleaning
 
 # Load the dataset
@@ -275,12 +256,6 @@ weight_log_2 %>%
 weight_log_2 <- weight_log_2 %>%
   filter(bmi > 10 & bmi < 60)
 
-# ------------------------
-# Save cleaned dataset
-# ------------------------
-write_csv(weight_log_2,
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/weight_log_clean_second.csv")
-
 # Merge March–April and April–May cleaned weight logs
 
 # Load both cleaned files
@@ -299,12 +274,6 @@ range(weight_log_final$date)
 
 # Check unique users
 n_distinct(weight_log_final$id)
-
-# ------------------------
-# Save merged cleaned dataset
-# ------------------------
-write_csv(weight_log_final, 
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/weight_log_clean_final.csv")
 
 # ---------------------------------------
 # March to April Heart Rate Log Cleaning
@@ -337,10 +306,6 @@ heart_rate_1 %>%
 heart_rate_1 <- heart_rate_1 %>%
   filter(value >= 40 & value <= 220)
 
-# Save cleaned dataset
-write_csv(heart_rate_1,
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/heart_rate_clean_first.csv")
-
 # ---------------------------------------
 # April to May Heart Rate Log Cleaning
 # ---------------------------------------
@@ -372,10 +337,6 @@ heart_rate_2 %>%
 heart_rate_2 <- heart_rate_2 %>%
   filter(value >= 40 & value <= 220)
 
-# Save cleaned dataset
-write_csv(heart_rate_2,
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/heart_rate_clean_second.csv")
-
 # ------------------------------
 # Merge Cleaned Heart Rate Files
 # ------------------------------
@@ -389,10 +350,6 @@ heart_rate_final <- bind_rows(heart_rate_1, heart_rate_2)
 
 # Remove duplicates after merge
 heart_rate_final <- heart_rate_final %>% distinct()
-
-# Save merged dataset
-write_csv(heart_rate_final,
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/heart_rate_clean_final.csv")
 
 # ------------------------------
 # Sleep Day Dataset Cleaning
@@ -441,10 +398,6 @@ sleep_day <- sleep_day %>%
     # Weekday for behavior patterns
     weekday = weekdays(sleep_day)
   )
-
-# 8. Save cleaned dataset
-write_csv(sleep_day,
-          "F:/Google_Data_Analysis/case_studies/case_study_2/case_study_2_datasets/cleaned_datasets/sleep_day_clean.csv")
 
 # =======================================================
 # Bellabeat Case Study - Analysis Phase
@@ -654,7 +607,7 @@ ggplot(sedentary_trend, aes(x = weekday, y = avg_sedentary, group = 1)) +
   custom_theme
 
 # =======================================================
-# 3. Sleep Insights: Sleep Duration
+# 3. Average Sleep Hours by Weekday
 # =======================================================
 sleep_weekday <- sleep_day %>%
   group_by(weekday) %>%
@@ -676,7 +629,7 @@ ggplot(sleep_weekday, aes(x = weekday, y = avg_sleep_hours, fill = weekday)) +
   custom_theme
 
 # =======================================================
-# 4. Weight & BMI Insights
+# 4. BMI Distribution of Users
 # =======================================================
 ggplot(weight_log, aes(x = bmi)) +
   geom_histogram(binwidth = 1, fill = "green", color = "black") +
@@ -694,7 +647,7 @@ ggplot(weight_log, aes(x = bmi)) +
 
 
 # =======================================================
-# 5. Heart Rate Insights
+# 5. Distribution of Average Daily Heart Rate
 # =======================================================
 ggplot(heart_rate_daily, aes(x = avg_hr)) +
   geom_histogram(binwidth = 2, fill = "orange", color = "black") +
@@ -707,7 +660,7 @@ ggplot(heart_rate_daily, aes(x = avg_hr)) +
   custom_theme
 
 # =======================================================
-# 6. Cross-Dataset Insights: Steps vs Sleep
+# 6. Cross-Dataset Insights: teps vs Sleep Duration
 # =======================================================
 ggplot(activity_sleep, aes(x = total_steps, y = total_minutes_asleep)) +
   geom_point(alpha = 0.5, color = "darkblue") +
@@ -725,5 +678,48 @@ ggplot(activity_sleep, aes(x = total_steps, y = total_minutes_asleep)) +
   ) +
   custom_theme
 
+# =======================================================
+## 7. User Engagement Levels
+# =======================================================
 
+engagement_plot <- daily_activity %>%
+  count(engagement_level) %>%
+  mutate(percentage = n / sum(n) * 100)
 
+ggplot(engagement_plot, aes(x = engagement_level, y = percentage, fill = engagement_level)) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")), vjust = -0.5, fontface = "bold") +
+  labs(
+    title = "User Engagement Distribution",
+    subtitle = "Distribution of users across different activity engagement levels",
+    x = "Engagement Level",
+    y = "Percentage of Users"
+  ) +
+  scale_fill_manual(values = c("Low" = "#FF6B6B", "Moderate" = "#FFD166", "High" = "#06D6A0")) +
+  custom_theme
+
+# =======================================================
+## 8. Activity Minutes Distribution
+# =======================================================
+
+activity_minutes <- daily_activity %>%
+  summarize(
+    Very_Active = mean(very_active_minutes),
+    Fairly_Active = mean(fairly_active_minutes),
+    Lightly_Active = mean(lightly_active_minutes),
+    Sedentary = mean(sedentary_minutes)
+  ) %>%
+  pivot_longer(cols = everything(), names_to = "Activity_Type", values_to = "Average_Minutes")
+
+ggplot(activity_minutes, aes(x = reorder(Activity_Type, -Average_Minutes), y = Average_Minutes, fill = Activity_Type)) +
+  geom_col(show.legend = FALSE) +
+  labs(
+    title = "Average Daily Activity Minutes Distribution",
+    subtitle = "Users spend most time in sedentary activities followed by light activity",
+    x = "Activity Type",
+    y = "Average Minutes per Day"
+  ) +
+  scale_fill_manual(values = c("Very_Active" = "#EF476F", "Fairly_Active" = "#FFD166", 
+                               "Lightly_Active" = "#06D6A0", "Sedentary" = "#118AB2")) +
+  custom_theme +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
