@@ -28,8 +28,7 @@ All datasets used in this analysis are hosted on Kaggle (due to GitHub's 25 MB p
   [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/april-12-to-may-11-datasets)
 
 - **Clean and Merged Final Datasets**  
-  Contains 4 cleaned and merged CSV files used for the analysis.
-  
+  Contains 4 cleaned and merged CSV files used for the analysis. 
   [View on Kaggle](https://www.kaggle.com/datasets/hamzajawad123/fitbit-cleaned-and-merged-datasets)
   
 ---
