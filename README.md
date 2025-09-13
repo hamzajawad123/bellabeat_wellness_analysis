@@ -70,31 +70,37 @@ The analysis followed the **six-step data analysis framework**:
 
 ---
 
-## Sample Visualizations  
+## 📊 Sample Visualizations  
 
 Here are a few key visualizations generated during the analysis:  
 
 **Visualization 1: Steps vs Calories Burned**  
-Shows a positive trend — more steps lead to more calories burned.  
-![Steps vs Calories](./visuals/steps_vs_calories.png)  
+This scatter plot shows a clear positive relationship between **daily steps** and **calories burned**, indicating that more active users burn more calories.  
+![Steps vs Calories Burned](./visuals/Steps_vs_Calories_Burned.png)  
 
 ---
 
-**Visualization 2: Sedentary Time by Weekday**  
-Highlights peaks in sitting behavior on Mondays and Fridays.  
-![Sedentary Time](./visuals/sedentary_by_weekday.png)  
+**Visualization 2: Sedentary Behavior by Weekday**  
+This line chart illustrates **average sedentary minutes** across the week, showing that users are most sedentary on **Mondays** and again near the **end of the week**.  
+![Sedentary Behavior by Weekday](./visuals/sedentary_behaviour_by_weekday.png)  
 
 ---
 
 **Visualization 3: Average Sleep Hours by Weekday**  
-Shows lower sleep on weekdays and higher sleep on weekends.  
-![Sleep Hours](./visuals/sleep_by_weekday.png)  
+This bar chart displays **average sleep duration** on different weekdays, showing that users sleep less on **weekdays** compared to **weekends**.  
+![Average Sleep Hours by Weekday](./visuals/Average_Sleep_Hours_by_Weekday.png)  
 
 ---
 
 **Visualization 4: BMI Distribution of Users**  
-Reveals most users are in a moderate BMI range (~25).  
-![BMI Distribution](./visuals/bmi_distribution.png)  
+This histogram shows the **distribution of BMI values** among users, with most users falling in the **healthy range (18.5–24.9)**.  
+![BMI Distribution of Users](./visuals/BMI_Distribution_of_Users.png)  
+
+---
+
+**Visualization 5: User Engagement Levels**  
+This bar chart shows the **percentage of users** in each engagement category (Low, Moderate, High), providing an overview of overall user activity.  
+![User Engagement Levels](./visuals/User_Engagement_Distribution.png)  
 
 ---
 
